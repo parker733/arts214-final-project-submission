@@ -57,20 +57,35 @@
         <a href="img/photography/snow/14.jpg" data-caption="snow" target="_blank" class="imgsize"><img src="img/photography/snow-thumb/14.jpg" alt="Image"/></a>
       </div>
     </div>
+    <!-- Return to Top -->
+    <a href="javascript:" id="return-to-top"><p style="color: white">Top</p></a>
+    <!-- Return to Top -->
+    <a href="photography.html" id="return-to-cata"><p class="w">Cata</p></a>
   </div>
-</div>
-
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="js/bootstrap.min.js"></script>
-<script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
-<script type="text/javascript" src="bower_components/slick-carousel/slick/slick.min.js"></script>
-<script type="text/javascript" src="bower_components/slick-lightbox/dist/slick-lightbox.min.js"></script>
-<script type="text/javascript">
-  $('#captions-demo').slickLightbox({
-    caption: 'caption',
-    useHistoryApi: 'true'
-  });
+  
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+  <script src="js/bootstrap.min.js"></script>
+  <script type="text/javascript" src="bower_components/jquery/dist/jquery.js"></script>
+  <script type="text/javascript" src="bower_components/slick-carousel/slick/slick.min.js"></script>
+  <script type="text/javascript" src="bower_components/slick-lightbox/dist/slick-lightbox.min.js"></script>
+  <script type="text/javascript">
+    $('#captions-demo').slickLightbox({
+      caption: 'caption',
+      useHistoryApi: 'true'
+    });
+  // ===== Scroll to Top ==== 
+  $(window).scroll(function() {
+    if ($(this).scrollTop() >= 50) {        // If page is scrolled more than 50px
+        $('#return-to-top').fadeIn(200);    // Fade in the arrow
+      } else {
+        $('#return-to-top').fadeOut(200);   // Else fade out the arrow
+      }
+    });
+$('#return-to-top').click(function() {      // When arrow is clicked
+  $('body,html').animate({
+        scrollTop : 0                       // Scroll to top of body
+      }, 500);
+});
 </script>
 </body>
 </html>
-
